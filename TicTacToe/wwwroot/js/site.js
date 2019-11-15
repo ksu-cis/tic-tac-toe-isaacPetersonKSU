@@ -2,23 +2,27 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
-var turn = "x";
+var squares = document.getElementsByClassName("square");
+for (int i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('drop', onDrop);
 
-function setTurn() {
-    var turnElement = document.getElementById("turn");
-    turnElement.innerText = 'it is player ${turn}'s turn';
 }
 
-function onClick(event) {
-    event.preventDefault();
-    if (!event.target.innerText) {
-        event.target.innerText = turn;
-        if (turn === "x") {
-            turn = "o";
-        }
-        if (turn === "x") {
-            turn = "x";
-        }
-        setTurn
-    }
+function onDragEnter(event) {
+    event.target.style.backgroundColor = "yellow";
+}
+
+function onDrop(event) {
+    console.log(event);
+    /*
+     * this thing doesnt work and i have no idea why NOR any desire to find out
+     * i wat tot go home 
+     * 
+     * please mr bean let me leave its friday and ive been up sice 3:45 this morning
+     * 
+     */
+}
+
+function onDragExit(event) {
+    event.target.style.backgroundColor = "default";
 }
